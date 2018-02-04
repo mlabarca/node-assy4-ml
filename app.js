@@ -17,6 +17,7 @@ var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promotionsRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var userRouter = require('./routes/userRouter');
+var favoriteRouter = require('./routes/favoriteRouter');
 
 const Dishes = require('./models/dishes');
 
@@ -87,6 +88,7 @@ function auth (req, res, next) {
 }
 
 app.use(auth);
+app.use('/favorites', favoriteRouter);
 app.use('/dishes',dishRouter);
 app.use('/promotions',promoRouter);
 app.use('/leaders',leaderRouter);
